@@ -1,7 +1,8 @@
 node_modules
 public
-.env
-.env.production
-.env.development
-.env.staging
-.DS_Store
+env
+idea
+env.production
+env.development
+env.staging
+DS_Store
