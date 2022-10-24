@@ -14,7 +14,7 @@ const {onToggleButton, tg } = useTelegram()
   return (
     <div className="App">
         <Header></Header>
-        <Button onClick={onToggleButton}>Toggle </Button>
+        <Button onClick={()=>{onToggleButton()}}>Toggle </Button>
     </div>
   );
 }
