@@ -6,7 +6,7 @@ const token = process.env["TOKEN"] || null
 validSecret(token)
 
 const bot = new TelegramBot(token, {polling: true});
-const wepAppUrl = "http://192.168.33.230:3000"
+const wepAppUrl = "https://master--thunderous-souffle-b419f1.netlify.app/"
 
 bot.on('message', async (msg) => {
     const chatId = msg.chat.id;
