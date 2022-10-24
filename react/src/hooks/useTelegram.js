@@ -16,7 +16,7 @@ export function useTelegram(){
 
     useEffect(()=>{
         tg.ready()
-    }, [])
+    })
 
     return {
         onClose,
