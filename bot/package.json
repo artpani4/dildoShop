@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"module",
   "scripts": {
     "start": "doppler run --command=\"node index.js\"",
     "ns" : "doppler run --command=\"nodemon index.js\""

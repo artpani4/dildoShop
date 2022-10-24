@@ -1,4 +1,4 @@
-const validSecret = (token)=>{
+export const validSecret = (token)=>{
     try{
         if(!token){
             throw new Error("Токен не найден!")
@@ -9,5 +9,3 @@ const validSecret = (token)=>{
         console.log(err)
     }
 }
-
-module.exports = validSecret
