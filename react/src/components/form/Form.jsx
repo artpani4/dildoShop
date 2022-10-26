@@ -11,6 +11,10 @@ const Form = () => {
         tg.MainButton.setParams({
             text: "Отправить данные",
         });
+
+        tg.MainButton.onCLick(() => {
+            tg.sendData("NU ZDAROVA");
+        });
     });
 
     useEffect(() => {
