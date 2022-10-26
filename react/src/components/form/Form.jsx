@@ -12,7 +12,7 @@ const Form = () => {
             text: "Отправить данные",
         });
 
-        tg.MainButton.onCLick(() => {
+        tg.MainButton.onClick(() => {
             tg.sendData("NU ZDAROVA");
         });
     });
