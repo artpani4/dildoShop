@@ -20,8 +20,8 @@ const Form = () => {
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [country, street, subject]);
-
-    tg.MainButton.onClick(onSendData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(tg.MainButton.onClick(onSendData), []);
 
     useEffect(() => {
         tg.MainButton.setParams({
