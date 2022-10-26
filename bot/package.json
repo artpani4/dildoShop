@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "start": "doppler run --command=\"node index.js\"",
-    "ns" : "doppler run --command=\"nodemon index.js\""
+    "ns": "doppler run --command=\"nodemon index.js\""
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "nodemon": "^2.0.20"
   },
   "dependencies": {
-    "node-telegram-bot-api": "^0.59.0"
+    "node-telegram-bot-api": "^0.59.0",
+    "prettier": "^2.7.1"
   }
 }
