@@ -13,7 +13,11 @@ const Form = () => {
         });
 
         tg.MainButton.onClick(() => {
-            tg.sendData("NU ZDAROVA");
+            tg.sendData(
+                JSON.stringify({
+                    mes: "ЛОХ",
+                })
+            );
         });
     });
 
