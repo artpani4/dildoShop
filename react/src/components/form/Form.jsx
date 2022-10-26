@@ -8,7 +8,7 @@ const Form = () => {
 
     const tg = useTelegram();
     useEffect(() => {
-        alert(tg.MainButton);
+        // alert(tg.MainButton);
         tg.MainButton.setParams({
             text: "Отправить данные",
         });
