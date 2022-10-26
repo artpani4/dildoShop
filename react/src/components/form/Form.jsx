@@ -15,7 +15,11 @@ const Form = () => {
         tg.MainButton.onClick(() => {
             tg.sendData(
                 JSON.stringify({
-                    mes: "ЛОХ",
+                    userInfo: {
+                        country: country,
+                        street: street,
+                        subject: subject,
+                    },
                 })
             );
         });
