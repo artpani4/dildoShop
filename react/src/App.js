@@ -26,7 +26,7 @@ function App() {
                     onToggleButton();
                 }}
             >
-                Toggle{" "}
+                Toggle
             </Button>
         </div>
     );
