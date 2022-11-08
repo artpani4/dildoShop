@@ -4,7 +4,7 @@ import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
 import Loader from "../loader/Loader.jsx";
 
-const ProductList = ({ products }) => {
+const ProductList = () => {
     const onAdd = () => {};
 
     const [products, setProducts] = useState([]);
