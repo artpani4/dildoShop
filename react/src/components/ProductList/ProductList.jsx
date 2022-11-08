@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
@@ -8,9 +8,14 @@ const ProductList = () => {
     const onAdd = () => {};
 
     const [products, setProducts] = useState([]);
-    const [fetchProducts, isLoading, isError] = useFetching(async () => {
+    const [fetchProducts, isLoading] = useFetching(async () => {
         const products = await ProductService.getAll();
+        setProducts(products);
     });
+
+    useEffect(() => {
+        fetchProducts().then();
+    }, []);
     return (
         <div className={"list"}>
             {isLoading && (
