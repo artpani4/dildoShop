@@ -30,6 +30,7 @@ const ProductList = () => {
             newAdded = [...addedItems, product];
         }
         setAddedItems(newAdded);
+        console.log("from onADD", addedItems);
     };
 
     const onPayClick = useCallback(() => console.log(addedItems), [addedItems]);
