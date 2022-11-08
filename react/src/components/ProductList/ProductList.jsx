@@ -15,9 +15,11 @@ const ProductList = () => {
     });
 
     const totalSum = () => {
-        return addedItems.reduce((acc, item) => {
-            return acc + parseFloat(item.price);
-        }, 0);
+        return addedItems
+            .reduce((acc, item) => {
+                return acc + parseFloat(item.price);
+            }, 0)
+            .toFixed(2);
     };
     const onAdd = (product) => {
         const alreadyFound = addedItems.find((item) => item.id === product.id);
