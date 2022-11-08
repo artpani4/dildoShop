@@ -28,7 +28,9 @@ const ProductList = () => {
             newAdded = [...addedItems, product];
         }
         setAddedItems(newAdded);
+    };
 
+    useEffect(() => {
         if (addedItems.length === 0) {
             tg.MainButton.hide();
         } else {
@@ -37,7 +39,8 @@ const ProductList = () => {
             });
             tg.MainButton.show();
         }
-    };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [addedItems]);
 
     useEffect(() => {
         fetchProducts().then();
