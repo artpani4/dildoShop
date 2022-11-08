@@ -1,0 +1,19 @@
+.loader{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px dashed teal;
+    animation: myRotate 3s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes myRotate {
+    0%{
+        transform: rotate(0deg) scale(0.5);
+    }
+    50%{
+        transform: rotate(180deg)  scale(1);
+    }
+    100%{
+        transform: rotate(0deg) scale(0.5);
+    }
+}
