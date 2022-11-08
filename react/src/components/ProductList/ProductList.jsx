@@ -28,7 +28,7 @@ const ProductList = () => {
             {products.map((product) => (
                 <ProductItem
                     product={product}
-                    className={"item"}
+                    className={"product"}
                     onAdd={onAdd}
                 ></ProductItem>
             ))}
