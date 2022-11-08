@@ -32,10 +32,10 @@ const ProductList = () => {
         if (addedItems.length === 0) {
             tg.MainButton.hide();
         } else {
-            tg.MainButton.show();
             tg.MainButton.setParams({
                 text: `Купить (всего ${totalSum()})`,
             });
+            tg.MainButton.show();
         }
     };
 

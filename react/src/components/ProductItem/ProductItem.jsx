@@ -5,7 +5,6 @@ const ProductItem = ({ product, className, onAdd }) => {
     const onAddHandler = () => {
         onAdd(product);
     };
-    // console.log(cl["add-btn"]);
     return (
         <div className={cl.product + " " + className}>
             <img src={product.image} alt="" className={cl.img} />
