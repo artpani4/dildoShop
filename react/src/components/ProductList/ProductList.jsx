@@ -3,14 +3,14 @@ import ProductItem from "../ProductItem/ProductItem";
 import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
 import Loader from "../loader/Loader.jsx";
-
+import "./ProductList.css";
 const ProductList = () => {
     const onAdd = () => {};
 
     const [products, setProducts] = useState([]);
     const [fetchProducts, isLoading] = useFetching(async () => {
         const products = await ProductService.getAll();
-        console.table(products);
+        // console.table(products);
         setProducts(products);
     });
 
@@ -28,8 +28,9 @@ const ProductList = () => {
             {products.map((product) => (
                 <ProductItem
                     product={product}
-                    className={"product"}
+                    className={"item"}
                     onAdd={onAdd}
+                    key={product.id}
                 ></ProductItem>
             ))}
         </div>

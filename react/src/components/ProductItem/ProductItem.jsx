@@ -5,9 +5,9 @@ const ProductItem = ({ product, className, onAdd }) => {
     const onAddHandler = () => {
         onAdd(product);
     };
-
+    // console.log(cl);
     return (
-        <div className={"product" + className}>
+        <div className={cl.product + " " + className}>
             <div className={cl.img}></div>
             <div className={"title"}>{product.title}</div>
             <div className={cl.description}>{product.description}</div>
