@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
@@ -32,6 +32,8 @@ const ProductList = () => {
         setAddedItems(newAdded);
     };
 
+    const onPayClick = useCallback(() => console.log(addedItems), [addedItems]);
+
     useEffect(() => {
         if (addedItems.length === 0) {
             tg.MainButton.hide();
@@ -46,7 +48,7 @@ const ProductList = () => {
 
     useEffect(() => {
         fetchProducts().then();
-        tg.MainButton.onClick(() => console.log(addedItems));
+        tg.MainButton.onClick(onPayClick);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
