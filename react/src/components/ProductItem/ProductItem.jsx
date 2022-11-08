@@ -5,10 +5,10 @@ const ProductItem = ({ product, className, onAdd }) => {
     const onAddHandler = () => {
         onAdd(product);
     };
-    // console.log(cl);
+    // console.log(cl["add-btn"]);
     return (
         <div className={cl.product + " " + className}>
-            <div className={cl.img}></div>
+            <img src={product.image} alt="" className={cl.img} />
             <div className={"title"}>{product.title}</div>
             <div className={cl.description}>{product.description}</div>
             <div className={"price"}>
@@ -16,7 +16,7 @@ const ProductItem = ({ product, className, onAdd }) => {
                     Стоимость: <b>{product.price}</b>
                 </span>
             </div>
-            <Button className={cl.addBtn} onClick={onAddHandler}>
+            <Button className={cl["add-btn"]} onClick={onAddHandler}>
                 Добавить в корзнину
             </Button>
             <div></div>
