@@ -15,7 +15,8 @@ bot.on("message", async (msg) => {
                 [
                     {
                         text: "Заполнить форму",
-                        web_app: { url: wepAppUrl + "/form" },
+                        web_app: { url: wepAppUrl },
+                        // web_app: { url: wepAppUrl + "/form" },
                     },
                 ],
             ],

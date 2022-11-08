@@ -10,6 +10,7 @@ const ProductList = () => {
     const [products, setProducts] = useState([]);
     const [fetchProducts, isLoading] = useFetching(async () => {
         const products = await ProductService.getAll();
+        console.table(products);
         setProducts(products);
     });
 

@@ -10,6 +10,7 @@ export const useFetching = (callback) => {
         } catch (e) {
             setIsError(e);
         } finally {
+            setIsLoading(false);
         }
     };
 
