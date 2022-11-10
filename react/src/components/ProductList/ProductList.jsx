@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
@@ -32,14 +32,14 @@ const ProductList = () => {
         setAddedItems(newAdded);
     };
     // eslint-disable-next-line
-    const onPayClick = useCallback(
-        tg.sendData(
-            JSON.stringify({
-                prds: addedItems,
-            })
-        ),
-        [addedItems]
-    );
+    // const onPayClick = useCallback(
+    //     tg.sendData(
+    //         JSON.stringify({
+    //             addedItems,
+    //         })
+    //     ),
+    //     [addedItems]
+    // );
 
     useEffect(() => {
         if (addedItems.length === 0) {
@@ -55,7 +55,9 @@ const ProductList = () => {
 
     useEffect(() => {
         fetchProducts().then();
-        tg.MainButton.onClick(onPayClick);
+        tg.MainButton.onClick(() => {
+            console.log("Нажал!");
+        });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (

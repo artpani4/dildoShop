@@ -37,7 +37,6 @@ bot.on("message", async (msg) => {
         try {
             const data = JSON.parse(msg?.web_app_data?.data);
             console.log(data);
-            console.log(msg.web_app_data);
         } catch (e) {
             console.log(e);
         }
