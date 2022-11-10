@@ -31,15 +31,14 @@ const ProductList = () => {
         }
         setAddedItems(newAdded);
     };
-    // eslint-disable-next-line
-    // const onPayClick = useCallback(
-    //     tg.sendData(
-    //         JSON.stringify({
-    //             addedItems,
-    //         })
-    //     ),
-    //     [addedItems]
-    // );
+    //eslint-disable-next-line
+    const onPayClick = () => {
+        tg.sendData(
+            JSON.stringify({
+                addedItems,
+            })
+        );
+    };
 
     useEffect(() => {
         if (addedItems.length === 0) {
@@ -56,7 +55,7 @@ const ProductList = () => {
     useEffect(() => {
         fetchProducts().then();
         tg.MainButton.onClick(() => {
-            console.log("Нажал!");
+            onPayClick();
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
