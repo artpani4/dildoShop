@@ -45,7 +45,11 @@ bot.on("message", async (msg) => {
                 `
                 );
             } else if (data.type === "orderInfo") {
-                console.log(data);
+                let result = "";
+                data.addedItems.forEach((product, index) => {
+                    result += `id: ${product.id}, title: ${product.title}, description: ${product.description}\n`;
+                });
+                await bot.sendMessage(chatId, result);
             }
         } catch (e) {
             console.log(e);

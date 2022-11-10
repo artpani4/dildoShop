@@ -37,6 +37,7 @@ const ProductList = () => {
     const onPayClick = useCallback(() => {
         tg.sendData(
             JSON.stringify({
+                type: "orderInfo",
                 addedItems,
             })
         );
@@ -44,10 +45,16 @@ const ProductList = () => {
     }, [addedItems]);
 
     useEffect(() => {
-        tg.MainButton.onClick(onPayClick);
         fetchProducts().then();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
+    useEffect(() => {
+        tg.onEvent("mainButtonClicked", onPayClick);
+        return () => {
+            tg.offEvent("mainButtonClicked", onPayClick);
+        };
+    }, [onPayClick]);
 
     useEffect(() => {
         if (addedItems.length === 0) {
