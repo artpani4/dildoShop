@@ -30,7 +30,6 @@ const ProductList = () => {
             newAdded = [...addedItems, product];
         }
         setAddedItems(newAdded);
-        console.log("from onADD", addedItems);
     };
 
     const onPayClick = useCallback(() => console.log(addedItems), [addedItems]);
@@ -72,3 +71,8 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+// TODO
+// Разобраться с запозданием нажатия на кнопку onAdd
+// Разобраться с отправкой данных с main кнопки
+// Доделать деплой
