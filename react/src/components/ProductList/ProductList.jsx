@@ -44,7 +44,12 @@ const ProductList = () => {
     }, [addedItems]);
 
     useEffect(() => {
+        fetchProducts().then();
         tg.MainButton.onClick(onPayClick);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    useEffect(() => {
         if (addedItems.length === 0) {
             tg.MainButton.hide();
         } else {
@@ -56,10 +61,6 @@ const ProductList = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [addedItems]);
 
-    useEffect(() => {
-        fetchProducts().then();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
     return (
         <div className={"list"}>
             {isLoading && (
