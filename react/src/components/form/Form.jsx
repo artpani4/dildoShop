@@ -11,8 +11,8 @@ const Form = () => {
     const onSendData = useCallback(() => {
         tg.sendData(
             JSON.stringify({
+                type: "formInfo",
                 userInfo: {
-                    type: "formInfo",
                     country,
                     street,
                     subject,
