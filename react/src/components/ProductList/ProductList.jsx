@@ -38,7 +38,8 @@ const ProductList = () => {
                 addedItems,
             })
         );
-    }, addedItems);
+        // eslint-disable-next-line
+    }, [addedItems]);
 
     useEffect(() => {
         if (addedItems.length === 0) {
