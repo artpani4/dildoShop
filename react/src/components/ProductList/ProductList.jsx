@@ -54,6 +54,7 @@ const ProductList = () => {
         return () => {
             tg.offEvent("mainButtonClicked", onPayClick);
         };
+        // eslint-disable-next-line
     }, [onPayClick]);
 
     useEffect(() => {
