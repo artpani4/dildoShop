@@ -8,7 +8,9 @@ import { useTelegram } from "../../hooks/useTelegram";
 const ProductList = () => {
     const { tg } = useTelegram();
     const [products, setProducts] = useState([]);
-    const [addedItems, setAddedItems] = useState([{ id: -1, value: "sth" }]);
+    const [addedItems, setAddedItems] = useState([
+        { id: -1, value: "sth", price: 100 },
+    ]);
     const [fetchProducts, isLoading] = useFetching(async () => {
         const products = await ProductService.getAll();
         setProducts(products);
@@ -42,6 +44,7 @@ const ProductList = () => {
     }, [addedItems]);
 
     useEffect(() => {
+        tg.MainButton.onClick(onPayClick);
         if (addedItems.length === 0) {
             tg.MainButton.hide();
         } else {
@@ -55,9 +58,6 @@ const ProductList = () => {
 
     useEffect(() => {
         fetchProducts().then();
-        tg.MainButton.onClick(() => {
-            onPayClick();
-        });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
