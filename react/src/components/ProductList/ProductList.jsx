@@ -32,7 +32,14 @@ const ProductList = () => {
         setAddedItems(newAdded);
     };
 
-    const onPayClick = useCallback(() => console.log(addedItems), [addedItems]);
+    const onPayClick = useCallback(
+        tg.sendData(
+            JSON.stringify({
+                prds: products,
+            })
+        ),
+        [addedItems]
+    );
 
     useEffect(() => {
         if (addedItems.length === 0) {
