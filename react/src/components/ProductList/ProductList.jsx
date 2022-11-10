@@ -31,11 +31,11 @@ const ProductList = () => {
         }
         setAddedItems(newAdded);
     };
-
+    // eslint-disable-next-line
     const onPayClick = useCallback(
         tg.sendData(
             JSON.stringify({
-                prds: products,
+                prds: addedItems,
             })
         ),
         [addedItems]
