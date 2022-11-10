@@ -8,7 +8,7 @@ import { useTelegram } from "../../hooks/useTelegram";
 const ProductList = () => {
     const { tg } = useTelegram();
     const [products, setProducts] = useState([]);
-    const [addedItems, setAddedItems] = useState([]);
+    const [addedItems, setAddedItems] = useState(["sth"]);
     const [fetchProducts, isLoading] = useFetching(async () => {
         const products = await ProductService.getAll();
         setProducts(products);
