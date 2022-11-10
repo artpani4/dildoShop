@@ -15,8 +15,8 @@ bot.on("message", async (msg) => {
                 [
                     {
                         text: "Заполнить форму",
-                        web_app: { url: wepAppUrl },
-                        // web_app: { url: wepAppUrl + "/form" },
+                        // web_app: { url: wepAppUrl },
+                        web_app: { url: wepAppUrl + "/form" },
                     },
                 ],
             ],
@@ -36,7 +36,17 @@ bot.on("message", async (msg) => {
         console.log("Что-то прилетело");
         try {
             const data = JSON.parse(msg?.web_app_data?.data);
-            console.log(data);
+            if (data.type === "formInfo") {
+                await bot.sendMessage(
+                    chatId,
+                    `Ваша страна ${data.country}
+                Ваша улица ${data.street}
+                Ваш статус  ${data.subject}
+                `
+                );
+            } else if (data.type === "orderInfo") {
+                console.log(data);
+            }
         } catch (e) {
             console.log(e);
         }

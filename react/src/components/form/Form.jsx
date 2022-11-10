@@ -12,6 +12,7 @@ const Form = () => {
         tg.sendData(
             JSON.stringify({
                 userInfo: {
+                    type: "formInfo",
                     country,
                     street,
                     subject,
