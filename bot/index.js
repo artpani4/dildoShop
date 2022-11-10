@@ -33,6 +33,7 @@ bot.on("message", async (msg) => {
     });
 
     if (msg?.web_app_data?.data) {
+        console.log("Что-то прилетело");
         try {
             const data = JSON.parse(msg?.web_app_data?.data);
             console.log(data);
