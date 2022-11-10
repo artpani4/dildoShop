@@ -47,7 +47,7 @@ const ProductList = () => {
         fetchProducts().then();
         tg.MainButton.onClick(onPayClick);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [onPayClick]);
 
     useEffect(() => {
         if (addedItems.length === 0) {
