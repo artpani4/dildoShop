@@ -27,7 +27,7 @@ const Form = () => {
         });
         tg.MainButton.onClick(onSendData);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [onSendData]);
 
     useEffect(() => {
         if (!country || !street) {

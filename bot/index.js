@@ -39,9 +39,9 @@ bot.on("message", async (msg) => {
             if (data.type === "formInfo") {
                 await bot.sendMessage(
                     chatId,
-                    `Ваша страна ${data.country}
-                Ваша улица ${data.street}
-                Ваш статус  ${data.subject}
+                    `Ваша страна ${data.userInfo.country}
+                Ваша улица ${data.userInfo.street}
+                Ваш статус  ${data.userInfo.subject}
                 `
                 );
             } else if (data.type === "orderInfo") {
