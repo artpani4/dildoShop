@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import { useFetching } from "../../hooks/useFetching.js";
 import ProductService from "../../API/ProductService.js";
@@ -32,13 +32,13 @@ const ProductList = () => {
         setAddedItems(newAdded);
     };
     //eslint-disable-next-line
-    const onPayClick = () => {
+    const onPayClick = useCallback(() => {
         tg.sendData(
             JSON.stringify({
                 addedItems,
             })
         );
-    };
+    }, addedItems);
 
     useEffect(() => {
         if (addedItems.length === 0) {
